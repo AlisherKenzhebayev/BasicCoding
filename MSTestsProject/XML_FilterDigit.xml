@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rows>
+  <Row>
+    <A1>15</A1>
+    <A2>15</A2>
+    <A3>0</A3>
+    <A4>0</A4>
+    <Result>15</Result>
+  </Row>
+  <Row>
+    <A1>8</A1>
+    <A2>15</A2>
+    <A3>0</A3>
+    <A4>0</A4>
+    <Result>9</Result>
+  </Row>
+  <Row>
+    <A1>8</A1>
+    <A2>15</A2>
+    <A3>3</A3>
+    <A4>8</A4>
+    <Result>120</Result>
+  </Row>
+</Rows>
