@@ -17,3 +17,4 @@ C:\Users\AINKRAD\source\EPAM Training\BasicCoding\MSTestsProject\bin\Debug\nunit
 C:\Users\AINKRAD\source\EPAM Training\BasicCoding\MSTestsProject\obj\Debug\MSTestsProject.csproj.CopyComplete
 C:\Users\AINKRAD\source\EPAM Training\BasicCoding\MSTestsProject\obj\Debug\MSTestsProject.dll
 C:\Users\AINKRAD\source\EPAM Training\BasicCoding\MSTestsProject\obj\Debug\MSTestsProject.pdb
+C:\Users\AINKRAD\source\EPAM Training\BasicCoding\MSTestsProject\bin\Debug\XML_FilterDigit.xml
