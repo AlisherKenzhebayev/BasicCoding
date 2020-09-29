@@ -1,32 +1,37 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Izh_04_Basic_Coding;
 using System;
+using System.Xml;
+using System.Linq;
+using System.IO;
+using System.Xml.Linq;
 
 namespace MSTestProject
 {
     [TestClass]
     public class Izh_04_Basic_Coding_FilterDigitDDT
     {
-        private TestContext testContextInstance;
+        public TestContext testContextInstance;
         public TestContext TestContext
         {
             get { return testContextInstance; }
             set { testContextInstance = value; }
         }
 
-        [DeploymentItem("MSTestsProject\\XML_FilterDigit.xml")]
-        [DataSource("MyExcelDataSource")]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "XML_FilterDigit.xml", "Digit", DataAccessMethod.Sequential)]
         [TestMethod()]
-        public void TestInsertNumber()
+        public void TestFilterDigit()
         {
-            int x = Convert.ToInt32(TestContext.DataRow["A1"]);
-            int y = Convert.ToInt32(TestContext.DataRow["A2"]);
-            int i = Convert.ToInt32(TestContext.DataRow["A3"]);
-            int j = Convert.ToInt32(TestContext.DataRow["A4"]);
-            int result = Int32.Parse((string)TestContext.DataRow["Result"]);
+            string input = (string)TestContext.DataRow["array"];
+            string[] tokens = input.Split(',');
+            int[] array = Array.ConvertAll<string, int>(tokens, int.Parse);
+            int digit = Int32.Parse((string)TestContext.DataRow["digit"]);
+            string input2 = (string)TestContext.DataRow["result"];
+            string[] tokens2 = input2.Split(',');
+            int[] result = Array.ConvertAll<string, int>(tokens2, int.Parse);
 
-            var v = new Izh04BasicCodingTests().InsertNumber(x, y, i, j);
-            Assert.AreEqual(v, result);
+            var v = new Izh04BasicCodingTests().CheckDigitFiltering(array, digit);
+            Assert.IsTrue(Enumerable.SequenceEqual(v, result), "Not Equals");
         }
     }
 }
